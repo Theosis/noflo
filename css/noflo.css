@@ -1,0 +1,125 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #eeeeec;
+    color: #000000;
+    font-family: "Cantarell", "Helvetica", "Arial", sans-serif;
+}
+
+header {
+    font-variant: small-caps;
+    position: absolute;
+    display: block;
+    top: 0px;
+    width: 100%;
+    height: 228px;
+    margin-top: 0px;
+    padding-top: 24px;
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+}
+
+header img.logo {
+    padding: 16px;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header h1 .name, header h1 .dash {
+    display: none;
+}
+
+header h1 {
+    padding: 0px;
+    margin: 0px;
+}
+
+article {
+    margin-top: 266px;
+    display: block;
+    line-height: 1.5em;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+article .video, article .book {
+    display: block;
+    width: 260px;
+    float: right;
+    margin-left: 24px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    padding: 8px;
+    background-color: #d3d7cf;
+}
+
+article .video h2, article .book h2 {
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+article .video ul, article .book ul {
+    margin-left: 0px;
+    padding-left: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+article .video ul li, article .book ul li {
+    display: inline;
+    text-decoration: none;
+    margin-right: 8px;
+}
+
+article .book {
+    margin-top: 1em;
+}
+
+article .book img {
+    margin-top: 0.2em;
+    border: none;
+}
+
+article h2, h3 {
+    font-variant: small-caps;
+    margin-bottom: 0px;
+    padding-bottom: 0.5em;
+}
+
+article h1 {
+    font-size: 24pt;
+}
+
+article h2 {
+    font-size: 20pt;
+}
+
+article p {
+    margin-top: 0px;
+    margin-bottom: 0.5em;
+}
+
+article blockquote {
+    font-style: italic;
+    font-family: "Georgia", serif;
+    margin-top: 0px;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    display: block;
+    background-color: #eeeeec;
+    bottom: 0px;
+    padding-top: 1em;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+

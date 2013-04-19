@@ -1,0 +1,212 @@
+<!DOCTYPE html><html><head><title>NoFlo.coffee</title><meta http-equiv="Content-Type" content="text/html" charset="UTF-8"><link rel="stylesheet" media="all" href="../../docco.css"></head><body><div id="container"><div id="background"></div><div id="jump_to">Jump To &hellip;<div id="jump_wrapper"><div id="jump_page"><a href="../../index.html" class="source"><span class="file_name">README</span></a><a href="../../src/lib/InternalSocket.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">InternalSocket.coffee</span></a><a href="../../src/lib/Component.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">Component.coffee</span></a><a href="../../src/lib/Server.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">Server.coffee</span></a><a href="../../src/lib/Fbp.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">Fbp.coffee</span></a><a href="../../src/lib/Graph.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">Graph.coffee</span></a><a href="../../src/lib/Port.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">Port.coffee</span></a><a href="../../src/lib/NoFlo.coffee.html" class="source selected"><span class="base_path">src / lib / </span><span class="file_name">NoFlo.coffee</span></a><a href="../../src/lib/Utils.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">Utils.coffee</span></a><a href="../../src/lib/ArrayPort.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">ArrayPort.coffee</span></a><a href="../../src/lib/shell.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">shell.coffee</span></a><a href="../../src/bin/noflo.coffee.html" class="source "><span class="base_path">src / bin / </span><span class="file_name">noflo.coffee</span></a><a href="../../src/components/GroupByPacket.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">GroupByPacket.coffee</span></a><a href="../../src/components/ParseJson.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ParseJson.coffee</span></a><a href="../../src/components/Merge.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Merge.coffee</span></a><a href="../../src/components/ReadDocument.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ReadDocument.coffee</span></a><a href="../../src/components/ScrapeHtml.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ScrapeHtml.coffee</span></a><a href="../../src/components/ParseXml.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ParseXml.coffee</span></a><a href="../../src/components/SliceArray.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">SliceArray.coffee</span></a><a href="../../src/components/SetPropertyValue.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">SetPropertyValue.coffee</span></a><a href="../../src/components/ReadDir.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ReadDir.coffee</span></a><a href="../../src/components/Graph.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Graph.coffee</span></a><a href="../../src/components/DuplicateProperty.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">DuplicateProperty.coffee</span></a><a href="../../src/components/ReadFileRaw.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ReadFileRaw.coffee</span></a><a href="../../src/components/HTTP/Server.coffee.html" class="source "><span class="base_path">src / components / HTTP / </span><span class="file_name">Server.coffee</span></a><a href="../../src/components/HTTP/BasicAuth.coffee.html" class="source "><span class="base_path">src / components / HTTP / </span><span class="file_name">BasicAuth.coffee</span></a><a href="../../src/components/HTTP/SendResponse.coffee.html" class="source "><span class="base_path">src / components / HTTP / </span><span class="file_name">SendResponse.coffee</span></a><a href="../../src/components/HTTP/WriteResponse.coffee.html" class="source "><span class="base_path">src / components / HTTP / </span><span class="file_name">WriteResponse.coffee</span></a><a href="../../src/components/HTTP/Profiler.coffee.html" class="source "><span class="base_path">src / components / HTTP / </span><span class="file_name">Profiler.coffee</span></a><a href="../../src/components/Counter.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Counter.coffee</span></a><a href="../../src/components/Template.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Template.coffee</span></a><a href="../../src/components/SetProperty.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">SetProperty.coffee</span></a><a href="../../src/components/Replace.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Replace.coffee</span></a><a href="../../src/components/WebService/CouchDB/ReadDocument.coffee.html" class="source "><span class="base_path">src / components / WebService / CouchDB / </span><span class="file_name">ReadDocument.coffee</span></a><a href="../../src/components/WebService/CouchDB/GetChanges.coffee.html" class="source "><span class="base_path">src / components / WebService / CouchDB / </span><span class="file_name">GetChanges.coffee</span></a><a href="../../src/components/WebService/CouchDB/WriteDocument.coffee.html" class="source "><span class="base_path">src / components / WebService / CouchDB / </span><span class="file_name">WriteDocument.coffee</span></a><a href="../../src/components/WebService/CouchDB/OpenDatabase.coffee.html" class="source "><span class="base_path">src / components / WebService / CouchDB / </span><span class="file_name">OpenDatabase.coffee</span></a><a href="../../src/components/WebService/CouchDB/ReadDocumentAttachment.coffee.html" class="source "><span class="base_path">src / components / WebService / CouchDB / </span><span class="file_name">ReadDocumentAttachment.coffee</span></a><a href="../../src/components/WebService/Basecamp/ReadHours.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ReadHours.coffee</span></a><a href="../../src/components/WebService/Basecamp/BasecampComponent.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">BasecampComponent.coffee</span></a><a href="../../src/components/WebService/Basecamp/ConvertToJson.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ConvertToJson.coffee</span></a><a href="../../src/components/WebService/Basecamp/ReadProjects.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ReadProjects.coffee</span></a><a href="../../src/components/WebService/Basecamp/ReadTaskLists.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ReadTaskLists.coffee</span></a><a href="../../src/components/WebService/Basecamp/ReadProjectHours.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ReadProjectHours.coffee</span></a><a href="../../src/components/WebService/Basecamp/ReadTasks.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ReadTasks.coffee</span></a><a href="../../src/components/WebService/Basecamp/ReadProject.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ReadProject.coffee</span></a><a href="../../src/components/GetObjectKey.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">GetObjectKey.coffee</span></a><a href="../../src/components/RemoveGroups.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">RemoveGroups.coffee</span></a><a href="../../src/components/UniquePacket.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">UniquePacket.coffee</span></a><a href="../../src/components/CreateDate.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">CreateDate.coffee</span></a><a href="../../src/components/Split.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Split.coffee</span></a><a href="../../src/components/Kick.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Kick.coffee</span></a><a href="../../src/components/Output.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Output.coffee</span></a><a href="../../src/components/Callback.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Callback.coffee</span></a><a href="../../src/components/GroupByObjectKey.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">GroupByObjectKey.coffee</span></a><a href="../../src/components/RemoveProperty.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">RemoveProperty.coffee</span></a><a href="../../src/components/MapGroup.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">MapGroup.coffee</span></a><a href="../../src/components/WriteFileRaw.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">WriteFileRaw.coffee</span></a><a href="../../src/components/UniqueArray.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">UniqueArray.coffee</span></a><a href="../../src/components/FilterPropertyValue.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">FilterPropertyValue.coffee</span></a><a href="../../src/components/MapPropertyValue.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">MapPropertyValue.coffee</span></a><a href="../../src/components/SplitArray.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">SplitArray.coffee</span></a><a href="../../src/components/Stat.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Stat.coffee</span></a><a href="../../src/components/FilterProperty.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">FilterProperty.coffee</span></a><a href="../../src/components/FlattenObject.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">FlattenObject.coffee</span></a><a href="../../src/components/CreateObject.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">CreateObject.coffee</span></a><a href="../../src/components/SplitStr.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">SplitStr.coffee</span></a><a href="../../src/components/Base64Encode.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Base64Encode.coffee</span></a><a href="../../src/components/ReadFile.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ReadFile.coffee</span></a><a href="../../src/components/MapProperty.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">MapProperty.coffee</span></a><a href="../../src/components/PropertiesToObjects.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">PropertiesToObjects.coffee</span></a><a href="../../src/components/CollectGroups.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">CollectGroups.coffee</span></a></div></div></div><table cellpadding="0" cellspacing="0"><thead><tr><th class="docs"><h1>NoFlo.coffee</h1><div class="filepath">src/lib/</div></th><th class="code"></th></tr></thead><tbody><tr id="section-1"><td class="docs"><div class="pilwrap"><a href="#section-1" class="pilcrow">&#182;</a></div><pre><code>NoFlo - Flow-Based Programming for Node.js
+(c) 2011 Henri Bergius, Nemein
+NoFlo may be freely distributed under the MIT license
+</code></pre>
+</td><td class="code"><div class="highlight"><pre><span class="nv">internalSocket = </span><span class="nx">require</span> <span class="s2">&quot;./InternalSocket&quot;</span>
+<span class="nv">component = </span><span class="nx">require</span> <span class="s2">&quot;./Component&quot;</span>
+<span class="nv">port = </span><span class="nx">require</span> <span class="s2">&quot;./Port&quot;</span>
+<span class="nv">arrayport = </span><span class="nx">require</span> <span class="s2">&quot;./ArrayPort&quot;</span>
+<span class="nv">graph = </span><span class="nx">require</span> <span class="s2">&quot;./Graph&quot;</span></pre></div></td></tr><tr id="section-2"><td class="docs"><div class="pilwrap"><a href="#section-2" class="pilcrow">&#182;</a></div><h1>The NoFlo network coordinator</h1>
+
+<p>NoFlo networks consist of processes connected to each other
+via sockets attached from outports to inports.</p>
+
+<p>The role of the network coordinator is to take a graph and
+instantiate all the necessary processes from the designated
+components, attach sockets between them, and handle the sending
+of Initial Information Packets.</p>
+</td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nx">NoFlo</span>
+    <span class="nv">processes: </span><span class="p">{}</span>
+    <span class="nv">connections: </span><span class="p">[]</span>
+    <span class="nv">graph: </span><span class="kc">null</span>
+    <span class="nv">startupDate: </span><span class="kc">null</span>
+
+    <span class="nv">constructor: </span><span class="nf">(graph) -&gt;</span>
+        <span class="vi">@processes = </span><span class="p">{}</span>
+        <span class="vi">@connections = </span><span class="p">[]</span>
+        <span class="vi">@graph = </span><span class="nx">graph</span></pre></div></td></tr><tr id="section-3"><td class="docs"><div class="pilwrap"><a href="#section-3" class="pilcrow">&#182;</a></div><p>As most NoFlo networks are long-running processes, the
+network coordinator marks down the start-up time. This
+way we can calculate the uptime of the network.</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="vi">@startupDate = </span><span class="k">new</span> <span class="nb">Date</span><span class="p">()</span></pre></div></td></tr><tr id="section-4"><td class="docs"><div class="pilwrap"><a href="#section-4" class="pilcrow">&#182;</a></div><p>A NoFlo graph may change after network initialization.
+For this, the network subscribes to the change events from
+the graph.</p>
+
+<p>In graph we talk about nodes and edges. Nodes correspond
+to NoFlo processes, and edges to connections between them.</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="nx">@graph</span><span class="p">.</span><span class="kc">on</span> <span class="s1">&#39;addNode&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">node</span><span class="p">)</span> <span class="o">=&gt;</span>
+            <span class="nx">@addNode</span> <span class="nx">node</span>
+        <span class="nx">@graph</span><span class="p">.</span><span class="kc">on</span> <span class="s1">&#39;removeNode&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">node</span><span class="p">)</span> <span class="o">=&gt;</span>
+            <span class="nx">@removeNode</span> <span class="nx">node</span>
+        <span class="nx">@graph</span><span class="p">.</span><span class="kc">on</span> <span class="s1">&#39;addEdge&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">edge</span><span class="p">)</span> <span class="o">=&gt;</span>
+            <span class="nx">@addEdge</span> <span class="nx">edge</span>
+        <span class="nx">@graph</span><span class="p">.</span><span class="kc">on</span> <span class="s1">&#39;removeEdge&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">edge</span><span class="p">)</span> <span class="o">=&gt;</span>
+            <span class="nx">@removeEdge</span> <span class="nx">edge</span></pre></div></td></tr><tr id="section-5"><td class="docs"><div class="pilwrap"><a href="#section-5" class="pilcrow">&#182;</a></div><p>The uptime of the network is the current time minus the start-up
+time, in seconds.</p>
+</td><td class="code"><div class="highlight"><pre>    <span class="nv">uptime: </span><span class="o">-&gt;</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">()</span> <span class="o">-</span> <span class="nx">@startupDate</span></pre></div></td></tr><tr id="section-6"><td class="docs"><div class="pilwrap"><a href="#section-6" class="pilcrow">&#182;</a></div><h2>Loading components</h2>
+
+<p>Components can be passed to the NoFlo network in two ways:</p>
+
+<ul>
+<li>As direct, instantiated JavaScript objects</li>
+<li>As filenames</li>
+</ul>
+</td><td class="code"><div class="highlight"><pre>    <span class="nv">load: </span><span class="nf">(component) -&gt;</span></pre></div></td></tr><tr id="section-7"><td class="docs"><div class="pilwrap"><a href="#section-7" class="pilcrow">&#182;</a></div><p>Direct component instance, return as is</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="k">if</span> <span class="k">typeof</span> <span class="nx">component</span> <span class="o">is</span> <span class="s1">&#39;object&#39;</span>
+            <span class="k">return</span> <span class="nx">component</span>
+        <span class="k">try</span>
+            <span class="k">if</span> <span class="nx">component</span><span class="p">.</span><span class="nx">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">is</span> <span class="s2">&quot;.&quot;</span>
+                <span class="nv">component = </span><span class="s2">&quot;#{process.cwd()}#{component.substr(1)}&quot;</span>
+            <span class="nv">implementation = </span><span class="nx">require</span> <span class="nx">component</span>
+        <span class="k">catch</span> <span class="nx">error</span>
+            <span class="k">try</span>
+                <span class="nv">implementation = </span><span class="nx">require</span> <span class="s2">&quot;../components/#{component}&quot;</span>
+            <span class="k">catch</span> <span class="nx">localError</span></pre></div></td></tr><tr id="section-8"><td class="docs"><div class="pilwrap"><a href="#section-8" class="pilcrow">&#182;</a></div><p>Throw the original error instead</p>
+</td><td class="code"><div class="highlight"><pre>                <span class="nv">error.message = </span><span class="s2">&quot;#{localError.message} (#{error.message})&quot;</span>
+                <span class="k">throw</span> <span class="nx">error</span>
+        <span class="nx">implementation</span><span class="p">.</span><span class="nx">getComponent</span><span class="p">()</span></pre></div></td></tr><tr id="section-9"><td class="docs"><div class="pilwrap"><a href="#section-9" class="pilcrow">&#182;</a></div><h2>Add a process to the network</h2>
+
+<p>Processes can be added to a network at either start-up time
+or later. The processes are added with a node definition object
+that includes the following properties:</p>
+
+<ul>
+<li><code>id</code>: Identifier of the process in the network. Typically a string</li>
+<li><code>component</code>: Filename or path of a NoFlo component, or a component instance object</li>
+</ul>
+</td><td class="code"><div class="highlight"><pre>    <span class="nv">addNode: </span><span class="nf">(node) -&gt;</span></pre></div></td></tr><tr id="section-10"><td class="docs"><div class="pilwrap"><a href="#section-10" class="pilcrow">&#182;</a></div><p>Processes are treated as singletons by their identifier. If
+we already have a process with the given ID, return that.</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="k">return</span> <span class="k">if</span> <span class="nx">@processes</span><span class="p">[</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span>
+
+        <span class="nv">process =</span>
+          <span class="nv">id: </span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span></pre></div></td></tr><tr id="section-11"><td class="docs"><div class="pilwrap"><a href="#section-11" class="pilcrow">&#182;</a></div><p>Load the process for the node.</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="k">if</span> <span class="nx">node</span><span class="p">.</span><span class="nx">component</span>
+            <span class="nv">process.component = </span><span class="nx">@load</span> <span class="nx">node</span><span class="p">.</span><span class="nx">component</span></pre></div></td></tr><tr id="section-12"><td class="docs"><div class="pilwrap"><a href="#section-12" class="pilcrow">&#182;</a></div><p>Store and return the process instance </p>
+</td><td class="code"><div class="highlight"><pre>        <span class="nx">@processes</span><span class="p">[</span><span class="nx">process</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span> <span class="o">=</span> <span class="nx">process</span>
+
+    <span class="nv">removeNode: </span><span class="nf">(node) -&gt;</span>
+        <span class="k">return</span> <span class="nx">unless</span> <span class="nx">@processes</span><span class="p">[</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span></pre></div></td></tr><tr id="section-13"><td class="docs"><div class="pilwrap"><a href="#section-13" class="pilcrow">&#182;</a></div><p>TODO: Check for existing edges with this node</p>
+</td><td class="code"><div class="highlight"><pre>        <span class="k">delete</span> <span class="nx">@processes</span><span class="p">[</span><span class="nx">node</span><span class="p">.</span><span class="nx">id</span><span class="p">]</span></pre></div></td></tr><tr id="section-14"><td class="docs"><div class="pilwrap"><a href="#section-14" class="pilcrow">&#182;</a></div><p>Get process by its ID.</p>
+</td><td class="code"><div class="highlight"><pre>    <span class="nv">getNode: </span><span class="nf">(id) -&gt;</span>
+        <span class="nx">@processes</span><span class="p">[</span><span class="nx">id</span><span class="p">]</span>
+
+    <span class="nv">connectPort: </span><span class="nf">(socket, process, port, inbound) -&gt;</span>
+        <span class="k">if</span> <span class="nx">inbound</span>
+            <span class="nv">socket.to =</span>
+                <span class="nv">process: </span><span class="nx">process</span>
+                <span class="nv">port: </span><span class="nx">port</span>
+
+            <span class="nx">unless</span> <span class="nx">process</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">inPorts</span> <span class="o">and</span> <span class="nx">process</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">inPorts</span><span class="p">[</span><span class="nx">port</span><span class="p">]</span>
+                <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;No inport &#39;#{port}&#39; defined in process #{process.id}&quot;</span>
+                <span class="k">return</span>
+
+            <span class="k">return</span> <span class="nx">process</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">inPorts</span><span class="p">[</span><span class="nx">port</span><span class="p">].</span><span class="nx">attach</span> <span class="nx">socket</span>
+
+        <span class="nv">socket.from =</span>
+            <span class="nv">process: </span><span class="nx">process</span>
+            <span class="nv">port: </span><span class="nx">port</span>
+
+        <span class="nx">unless</span> <span class="nx">process</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">outPorts</span> <span class="o">and</span> <span class="nx">process</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">outPorts</span><span class="p">[</span><span class="nx">port</span><span class="p">]</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;No outport &#39;#{port}&#39; defined in process #{process.id}&quot;</span>
+            <span class="k">return</span>
+
+        <span class="nx">process</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">outPorts</span><span class="p">[</span><span class="nx">port</span><span class="p">].</span><span class="nx">attach</span> <span class="nx">socket</span>
+
+    <span class="nv">addDebug: </span><span class="nf">(socket) -&gt;</span>
+        <span class="nv">logSocket = </span><span class="nf">(message) -&gt;</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">error</span> <span class="s2">&quot;#{socket.getId()} #{message}&quot;</span>
+        <span class="nx">socket</span><span class="p">.</span><span class="kc">on</span> <span class="s2">&quot;connect&quot;</span><span class="p">,</span> <span class="o">-&gt;</span>
+            <span class="nx">logSocket</span> <span class="s2">&quot;CONN&quot;</span>
+        <span class="nx">socket</span><span class="p">.</span><span class="kc">on</span> <span class="s2">&quot;begingroup&quot;</span><span class="p">,</span> <span class="nf">(group) -&gt;</span>
+            <span class="nx">logSocket</span> <span class="s2">&quot;&lt; #{group}&quot;</span>
+        <span class="nx">socket</span><span class="p">.</span><span class="kc">on</span> <span class="s2">&quot;disconnect&quot;</span><span class="p">,</span> <span class="o">-&gt;</span>
+            <span class="nx">logSocket</span> <span class="s2">&quot;DISC&quot;</span>
+        <span class="nx">socket</span><span class="p">.</span><span class="kc">on</span> <span class="s2">&quot;endgroup&quot;</span><span class="p">,</span> <span class="nf">(group) -&gt;</span>
+            <span class="nx">logSocket</span> <span class="s2">&quot;&gt; #{group}&quot;</span>
+        <span class="nx">socket</span><span class="p">.</span><span class="kc">on</span> <span class="s2">&quot;data&quot;</span><span class="p">,</span> <span class="nf">(data) -&gt;</span>
+            <span class="nx">logSocket</span> <span class="s2">&quot;DATA&quot;</span>
+
+    <span class="nv">addEdge: </span><span class="nf">(edge) -&gt;</span>
+        <span class="k">return</span> <span class="nx">@addInitial</span><span class="p">(</span><span class="nx">edge</span><span class="p">)</span> <span class="nx">unless</span> <span class="nx">edge</span><span class="p">.</span><span class="nx">from</span><span class="p">.</span><span class="nx">node</span>
+        <span class="nv">socket = </span><span class="nx">internalSocket</span><span class="p">.</span><span class="nx">createSocket</span><span class="p">()</span>
+        <span class="nx">@addDebug</span> <span class="nx">socket</span> <span class="k">if</span> <span class="nx">@debug</span>
+
+        <span class="nv">from = </span><span class="nx">@getNode</span> <span class="nx">edge</span><span class="p">.</span><span class="nx">from</span><span class="p">.</span><span class="nx">node</span>
+        <span class="nx">unless</span> <span class="nx">from</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;No process defined for outbound node #{edge.from.node}&quot;</span>
+        <span class="nx">unless</span> <span class="nx">from</span><span class="p">.</span><span class="nx">component</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;No component defined for outbound node #{edge.from.node}&quot;</span>
+        <span class="nx">unless</span> <span class="nx">from</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">isReady</span><span class="p">()</span>
+            <span class="nx">from</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">once</span> <span class="s2">&quot;ready&quot;</span><span class="p">,</span> <span class="o">=&gt;</span>
+                <span class="nx">@addEdge</span> <span class="nx">edge</span>
+            <span class="k">return</span>
+        <span class="nv">to = </span><span class="nx">@getNode</span> <span class="nx">edge</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">node</span>
+        <span class="nx">unless</span> <span class="nx">to</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;No process defined for inbound node #{edge.to.node}&quot;</span>
+        <span class="nx">unless</span> <span class="nx">to</span><span class="p">.</span><span class="nx">component</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;No component defined for inbound node #{edge.to.node}&quot;</span>
+        <span class="nx">unless</span> <span class="nx">to</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">isReady</span><span class="p">()</span>
+            <span class="nx">to</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">once</span> <span class="s2">&quot;ready&quot;</span><span class="p">,</span> <span class="o">=&gt;</span>
+                <span class="nx">@addEdge</span> <span class="nx">edge</span>
+            <span class="k">return</span>
+
+        <span class="nx">@connectPort</span> <span class="nx">socket</span><span class="p">,</span> <span class="nx">to</span><span class="p">,</span> <span class="nx">edge</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">port</span><span class="p">,</span> <span class="kc">true</span>
+        <span class="nx">@connectPort</span> <span class="nx">socket</span><span class="p">,</span> <span class="nx">from</span><span class="p">,</span> <span class="nx">edge</span><span class="p">.</span><span class="nx">from</span><span class="p">.</span><span class="nx">port</span><span class="p">,</span> <span class="kc">false</span>
+
+        <span class="nx">@connections</span><span class="p">.</span><span class="nx">push</span> <span class="nx">socket</span>
+
+    <span class="nv">removeEdge: </span><span class="nf">(edge) -&gt;</span>
+        <span class="k">for</span> <span class="nx">connection</span><span class="p">,</span><span class="nx">index</span> <span class="k">in</span> <span class="nx">@connections</span>
+            <span class="k">if</span> <span class="nx">edge</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">node</span> <span class="o">is</span> <span class="nx">connection</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">process</span><span class="p">.</span><span class="nx">id</span> <span class="o">and</span> <span class="nx">edge</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">port</span> <span class="o">is</span> <span class="nx">connection</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">port</span>
+                <span class="nx">connection</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">process</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">inPorts</span><span class="p">[</span><span class="nx">connection</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">port</span><span class="p">]</span><span class="o">?</span><span class="p">.</span><span class="nx">detach</span> <span class="nx">connection</span>
+                <span class="nx">@connections</span><span class="p">.</span><span class="nx">splice</span> <span class="nx">index</span><span class="p">,</span> <span class="mi">1</span>
+            <span class="k">if</span> <span class="nx">edge</span><span class="p">.</span><span class="nx">from</span><span class="p">.</span><span class="nx">node</span>
+                <span class="k">if</span> <span class="nx">connection</span><span class="p">.</span><span class="nx">from</span> <span class="o">and</span> <span class="nx">edge</span><span class="p">.</span><span class="nx">from</span><span class="p">.</span><span class="nx">node</span> <span class="o">is</span> <span class="nx">connection</span><span class="p">.</span><span class="nx">from</span><span class="p">.</span><span class="nx">process</span><span class="p">.</span><span class="nx">id</span> <span class="o">and</span> <span class="nx">edge</span><span class="p">.</span><span class="nx">from</span><span class="p">.</span><span class="nx">port</span> <span class="o">is</span> <span class="nx">connection</span><span class="p">.</span><span class="nx">from</span><span class="p">.</span><span class="nx">port</span>
+                    <span class="nx">connection</span><span class="p">.</span><span class="nx">from</span><span class="p">.</span><span class="nx">process</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">inPorts</span><span class="p">[</span><span class="nx">connection</span><span class="p">.</span><span class="nx">from</span><span class="p">.</span><span class="nx">port</span><span class="p">].</span><span class="nx">detach</span> <span class="nx">connection</span>
+                    <span class="nx">@connections</span><span class="p">.</span><span class="nx">splice</span> <span class="nx">index</span><span class="p">,</span> <span class="mi">1</span>
+
+    <span class="nv">addInitial: </span><span class="nf">(initializer) -&gt;</span>
+        <span class="nv">socket = </span><span class="nx">internalSocket</span><span class="p">.</span><span class="nx">createSocket</span><span class="p">()</span>
+        <span class="nx">@addDebug</span> <span class="nx">socket</span> <span class="k">if</span> <span class="nx">@debug</span>
+
+        <span class="nv">to = </span><span class="nx">@getNode</span> <span class="nx">initializer</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">node</span>
+        <span class="nx">unless</span> <span class="nx">to</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nb">Error</span> <span class="s2">&quot;No process defined for inbound node #{initializer.to.node}&quot;</span>
+
+        <span class="nx">unless</span> <span class="nx">to</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">isReady</span><span class="p">()</span> <span class="o">or</span> <span class="nx">to</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">inPorts</span><span class="p">[</span><span class="nx">initializer</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">port</span><span class="p">]</span>
+            <span class="nx">to</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">setMaxListeners</span> <span class="mi">0</span>
+            <span class="nx">to</span><span class="p">.</span><span class="nx">component</span><span class="p">.</span><span class="nx">once</span> <span class="s2">&quot;ready&quot;</span><span class="p">,</span> <span class="o">=&gt;</span>
+                <span class="nx">@addInitial</span> <span class="nx">initializer</span>
+            <span class="k">return</span>
+
+        <span class="nx">@connectPort</span> <span class="nx">socket</span><span class="p">,</span> <span class="nx">to</span><span class="p">,</span> <span class="nx">initializer</span><span class="p">.</span><span class="nx">to</span><span class="p">.</span><span class="nx">port</span><span class="p">,</span> <span class="kc">true</span>
+        <span class="nx">@connections</span><span class="p">.</span><span class="nx">push</span> <span class="nx">socket</span>
+        <span class="nx">socket</span><span class="p">.</span><span class="nx">connect</span><span class="p">()</span>
+        <span class="nx">socket</span><span class="p">.</span><span class="nx">send</span> <span class="nx">initializer</span><span class="p">.</span><span class="nx">from</span><span class="p">.</span><span class="nx">data</span>
+        <span class="nx">socket</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">()</span>
+
+<span class="nv">exports.createNetwork = </span><span class="nf">(graph, debug = false) -&gt;</span>
+    <span class="nv">network = </span><span class="k">new</span> <span class="nx">NoFlo</span> <span class="nx">graph</span>
+    <span class="nv">network.debug = </span><span class="nx">debug</span>
+
+    <span class="nx">network</span><span class="p">.</span><span class="nx">addNode</span> <span class="nx">node</span> <span class="k">for</span> <span class="nx">node</span> <span class="k">in</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">nodes</span>
+    <span class="nx">network</span><span class="p">.</span><span class="nx">addEdge</span> <span class="nx">edge</span> <span class="k">for</span> <span class="nx">edge</span> <span class="k">in</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">edges</span>
+    <span class="nx">network</span><span class="p">.</span><span class="nx">addInitial</span> <span class="nx">initializer</span> <span class="k">for</span> <span class="nx">initializer</span> <span class="k">in</span> <span class="nx">graph</span><span class="p">.</span><span class="nx">initializers</span>
+
+    <span class="nx">network</span>
+
+<span class="nv">exports.loadFile = </span><span class="nf">(file, success, debug = false) -&gt;</span>
+    <span class="nx">graph</span><span class="p">.</span><span class="nx">loadFile</span> <span class="nx">file</span><span class="p">,</span> <span class="nf">(net) -&gt;</span>
+        <span class="nx">success</span> <span class="nx">exports</span><span class="p">.</span><span class="nx">createNetwork</span> <span class="nx">net</span><span class="p">,</span> <span class="nx">debug</span>
+
+<span class="nv">exports.saveFile = </span><span class="nf">(graph, file, success) -&gt;</span>
+    <span class="nx">graph</span><span class="p">.</span><span class="nx">save</span> <span class="nx">file</span><span class="p">,</span> <span class="o">-&gt;</span>
+        <span class="nx">success</span> <span class="nx">file</span>
+
+<span class="nv">exports.Component = </span><span class="nx">component</span><span class="p">.</span><span class="nx">Component</span>
+<span class="nv">exports.Port = </span><span class="nx">port</span><span class="p">.</span><span class="nx">Port</span>
+<span class="nv">exports.ArrayPort = </span><span class="nx">arrayport</span><span class="p">.</span><span class="nx">ArrayPort</span>
+<span class="nv">exports.Graph = </span><span class="nx">graph</span><span class="p">.</span><span class="nx">Graph</span>
+<span class="nv">exports.graph = </span><span class="nx">graph</span>
+<span class="nv">exports.internalSocket = </span><span class="nx">internalSocket</span>
+
+</pre></div></td></tr></tbody></table><div id="generated">generated Tue Apr 03 2012 15:29:47 GMT+0200 (CEST)  </div><div id="projectname"><a href="../../index.html">NoFlo</a></div></div></body></html>

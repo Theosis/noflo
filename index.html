@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>NoFlo &mdash; Flow-Based Programming for Node.js</title>
+    <link rel="stylesheet" href="css/noflo.css" />
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-75936-14']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body prefix="doap: http://usefulinc.com/ns/doap#" about="http://noflojs.org/" typeof="doap:Project">
+    <header>
+      <a href="https://github.com/bergie/noflo" rel="doap:homepage"><img style="position: absolute; top: 0; right: 0; border: 0;" src="./img/fork-me.png" alt="Fork me on GitHub"></a>
+      <img class="logo" src="img/noflo-white.png" alt="NoFlo" />
+      <h1><span property="doap:name" class="name">NoFlo</span> <span class="dash">&mdash;</span> <span property="doap:shortdesc">Flow-Based Programming for Node.js</span></h1>
+    </header>
+    <article>
+      <div class="video">
+        <h2>Watch the video</h2>
+        <iframe width="260" height="162" src="http://www.youtube.com/embed/pgP4v9b5DvE" frameborder="0" allowfullscreen></iframe>
+        <p>
+        NoFlo presentation by Henri Bergius from <a href="http://wakanday.org/">JS.everywhere</a> in Boston, October 15th 2011
+        </p>
+        <ul>
+          <li><a href="http://www.youtube.com/watch?v=pgP4v9b5DvE">YouTube</a></li>
+          <li><a href="http://vimeo.com/33288036">Vimeo</a></li>
+          <li><a href="http://www.slideshare.net/bergie/noflo-flowbased-programming-for-nodejs">SlideShare</a></li>
+        </ul>
+      </div>
+
+      <div class="intro" property="doap:description">
+        <p>NoFlo is a JavaScript implementation of <a href="http://en.wikipedia.org/wiki/Flow-based_programming">Flow-Based Programming</a> (FBP), a way of separating the control flow of software from the actual software logic. It helps you to organize large applications, especially when importing and modifying large data sets.</p>
+
+        <p>FBP itself is not a new idea: it comes from a term IBM used in the 70s to define the concepts of more manageable business workflows. NoFlo, however, refreshes these concepts and brings them to <a href="http://nodejs.org/">Node.js</a> applications.</p>
+
+        <p>The MIT-licensed NoFlo library can either be used to run full flow-based applications or as a library for making complex workflows or asynchronous processes more manageable. It can also be used as an <a href="http://en.wikipedia.org/wiki/Extract,_transform,_load">Extract, Transform, Load</a> (ETL) tool in business applications.</p>
+
+        <p>NoFlo has been written in <a href="http://jashkenas.github.com/coffee-script">CoffeeScript</a> for simplicity. The system is heavily inspired by <a href="http://www.jpaulmorrison.com/">J. Paul Morrison's</a> book <a href="http://www.jpaulmorrison.com/fbp/#More">Flow-Based Programming</a>.</p>
+      <div class="visual">
+        <h2>Understand and design software visually</h2>
+
+        <p>With NoFlo, your application consists of independent components that are connected together in a graph. This makes it possible to split your problem in logical areas that make sense, and to see how they connect with each other.
+        </p>
+
+        <p style="text-align: center;"><img src="img/noflo-webserver.png" alt="Web server in NoFlo" title="Web server running with NoFlo" /></p>
+
+        <p>NoFlo applications can be designed using the <a href="http://www.jpaulmorrison.com/cgi-bin/wiki.pl?DrawFBP">DrawFBP</a> tool, and visualized using the integrated web-based graph viewer.</p>
+      </div>
+
+      <div class="book">
+        <h2>Flow-Based Programming book</h2>
+        <p style="text-align: center;"><a href="http://www.jpaulmorrison.com/fbp/#book"><img src="img/fbp-cover.png" alt="Flow-Based Programming" alt="FBP book cover" /></a></p>
+        <p>Flow-Based Programming, 2nd edition by <a href="http://www.jpaulmorrison.com/index.shtml">J. Paul Morrison</a>.
+        </p>
+        <ul>
+          <li><a href="http://www.amazon.com/gp/product/1451542321/ref=as_li_ss_tl?ie=UTF8&tag=bergiesweblog-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1451542321">Paperback</a></li>
+          <li><a href="http://www.amazon.com/gp/product/B004PLO66O/ref=as_li_ss_tl?ie=UTF8&tag=bergiesweblog-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=B004PLO66O">Kindle</a></li>
+          <li><a href="http://www.lulu.com/spotlight/paul_morrison">ePub</a></li>
+        </ul>
+      </div>
+
+      <div class="oop">
+        <h2>NoFlo and Flow-Based Programming</h2>
+
+        <p>Wikipedia explains <a href="http://en.wikipedia.org/wiki/Flow-based_programming">Flow-Based Programming</a> as:</p>
+        <blockquote>
+          <p>In computer science, flow-based programming (FBP) is a programming paradigm that defines applications as networks of "black box" processes, which exchange data across predefined connections by message passing, where the connections are specified externally to the processes. These black box processes can be reconnected endlessly to form different applications without having to be changed internally. FBP is thus naturally component-oriented.</p>
+        </blockquote>
+        
+        <p>Developers used to the <a href="http://en.wikipedia.org/wiki/Unix_philosophy">Unix philosophy</a> should be immediately familiar with FBP:</p>
+        
+        <blockquote>         
+          <p>This is the Unix philosophy: Write programs that do one thing and do it well. Write programs to work together. Write programs to handle text streams, because that is a universal interface.</p>
+        </blockquote>
+        
+        <p>It also fits well in Alan Kay's <a href="http://userpage.fu-berlin.de/~ram/pub/pub_jf47ht81Ht/doc_kay_oop_en">original idea of object-oriented programming</a>:</p>
+        
+        <blockquote>
+          <p>I thought of objects being like biological cells and/or individual computers on a network, only able to communicate with messages (so messaging came at the very beginning -- it took a while to see how to do messaging in a programming language efficiently enough to be useful).</p>
+        </blockquote>
+      </div>
+
+      <div class="download">
+        <h2>Getting NoFlo</h2>
+
+        <p>NoFlo is available via NPM. Just run:</p>
+
+        <pre>$ npm install -g noflo</pre>
+
+        <p>You can also watch and participate in the development of <a href="https://github.com/bergie/noflo">NoFlo on GitHub</a>. Discussions about NoFlo and FBP in general happen in the <a href="http://groups.google.com/group/flow-based-programming">Flow-Based Programming group</a>. See also the <a href="https://github.com/bergie/noflo/blob/master/CHANGES.md">NoFlo change log</a>.</p>
+      </div>
+
+      <div class="otherfbp">
+        <h2>Other Flow-Based Programming implementations</h2>
+
+        <ul>
+          <li><a href="http://www.jpaulmorrison.com/fbp/#JavaFBP">JavaFBP</a> &mdash; the Java-based reference implementation of FBP</li>
+          <li><a href="http://www.jpaulmorrison.com/fbp/#CsharpFBP">C#FBP</a> &mdash; C# port of JavaFBP</li>
+          <li><a href="https://github.com/trustmaster/goflow">GoFlow</a> &mdash; minimalistic FBP implementation in the Go language</li>
+          <li><a href="http://meemoo.org/">Meemoo</a> &mdash; web-based client-side implementation for audio/visual interactive applications</li>
+          <li><a href="http://www.pypes.org/">Pypes</a> &mdash; Python implementation for Extract, Load, Transform needs</li>
+          <li><a href="https://github.com/bergie/phpflo#readme">PhpFlo</a> &mdash; PHP 5.3 port of NoFlo</li>
+        </ul>
+      </div>
+    </article>
+    <footer prefix="foaf: http://xmlns.com/foaf/0.1/">
+    <p><strong>NoFlo &mdash; Flow-Based Programming for Node.js</strong> is <a href="http://www.opensource.org/licenses/mit-license.php" rel="doap:license">free software</a> developed by <span property="doap:maintainer"><a rel="foaf:homepage" typeof="foaf:Person" href="http://bergie.iki.fi/" property="foaf:name">Henri Bergius</a></span>.
+    </footer>
+  </body>
+</html>

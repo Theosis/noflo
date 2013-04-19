@@ -1,0 +1,113 @@
+<!DOCTYPE html><html><head><title>InternalSocket.coffee</title><meta http-equiv="Content-Type" content="text/html" charset="UTF-8"><link rel="stylesheet" media="all" href="../../docco.css"></head><body><div id="container"><div id="background"></div><div id="jump_to">Jump To &hellip;<div id="jump_wrapper"><div id="jump_page"><a href="../../index.html" class="source"><span class="file_name">README</span></a><a href="../../src/lib/InternalSocket.coffee.html" class="source selected"><span class="base_path">src / lib / </span><span class="file_name">InternalSocket.coffee</span></a><a href="../../src/lib/Component.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">Component.coffee</span></a><a href="../../src/lib/Server.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">Server.coffee</span></a><a href="../../src/lib/Fbp.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">Fbp.coffee</span></a><a href="../../src/lib/Graph.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">Graph.coffee</span></a><a href="../../src/lib/Port.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">Port.coffee</span></a><a href="../../src/lib/NoFlo.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">NoFlo.coffee</span></a><a href="../../src/lib/Utils.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">Utils.coffee</span></a><a href="../../src/lib/ArrayPort.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">ArrayPort.coffee</span></a><a href="../../src/lib/shell.coffee.html" class="source "><span class="base_path">src / lib / </span><span class="file_name">shell.coffee</span></a><a href="../../src/bin/noflo.coffee.html" class="source "><span class="base_path">src / bin / </span><span class="file_name">noflo.coffee</span></a><a href="../../src/components/GroupByPacket.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">GroupByPacket.coffee</span></a><a href="../../src/components/ParseJson.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ParseJson.coffee</span></a><a href="../../src/components/Merge.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Merge.coffee</span></a><a href="../../src/components/ReadDocument.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ReadDocument.coffee</span></a><a href="../../src/components/ScrapeHtml.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ScrapeHtml.coffee</span></a><a href="../../src/components/ParseXml.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ParseXml.coffee</span></a><a href="../../src/components/SliceArray.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">SliceArray.coffee</span></a><a href="../../src/components/SetPropertyValue.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">SetPropertyValue.coffee</span></a><a href="../../src/components/ReadDir.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ReadDir.coffee</span></a><a href="../../src/components/Graph.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Graph.coffee</span></a><a href="../../src/components/DuplicateProperty.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">DuplicateProperty.coffee</span></a><a href="../../src/components/ReadFileRaw.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ReadFileRaw.coffee</span></a><a href="../../src/components/HTTP/Server.coffee.html" class="source "><span class="base_path">src / components / HTTP / </span><span class="file_name">Server.coffee</span></a><a href="../../src/components/HTTP/BasicAuth.coffee.html" class="source "><span class="base_path">src / components / HTTP / </span><span class="file_name">BasicAuth.coffee</span></a><a href="../../src/components/HTTP/SendResponse.coffee.html" class="source "><span class="base_path">src / components / HTTP / </span><span class="file_name">SendResponse.coffee</span></a><a href="../../src/components/HTTP/WriteResponse.coffee.html" class="source "><span class="base_path">src / components / HTTP / </span><span class="file_name">WriteResponse.coffee</span></a><a href="../../src/components/HTTP/Profiler.coffee.html" class="source "><span class="base_path">src / components / HTTP / </span><span class="file_name">Profiler.coffee</span></a><a href="../../src/components/Counter.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Counter.coffee</span></a><a href="../../src/components/Template.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Template.coffee</span></a><a href="../../src/components/SetProperty.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">SetProperty.coffee</span></a><a href="../../src/components/Replace.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Replace.coffee</span></a><a href="../../src/components/WebService/CouchDB/ReadDocument.coffee.html" class="source "><span class="base_path">src / components / WebService / CouchDB / </span><span class="file_name">ReadDocument.coffee</span></a><a href="../../src/components/WebService/CouchDB/GetChanges.coffee.html" class="source "><span class="base_path">src / components / WebService / CouchDB / </span><span class="file_name">GetChanges.coffee</span></a><a href="../../src/components/WebService/CouchDB/WriteDocument.coffee.html" class="source "><span class="base_path">src / components / WebService / CouchDB / </span><span class="file_name">WriteDocument.coffee</span></a><a href="../../src/components/WebService/CouchDB/OpenDatabase.coffee.html" class="source "><span class="base_path">src / components / WebService / CouchDB / </span><span class="file_name">OpenDatabase.coffee</span></a><a href="../../src/components/WebService/CouchDB/ReadDocumentAttachment.coffee.html" class="source "><span class="base_path">src / components / WebService / CouchDB / </span><span class="file_name">ReadDocumentAttachment.coffee</span></a><a href="../../src/components/WebService/Basecamp/ReadHours.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ReadHours.coffee</span></a><a href="../../src/components/WebService/Basecamp/BasecampComponent.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">BasecampComponent.coffee</span></a><a href="../../src/components/WebService/Basecamp/ConvertToJson.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ConvertToJson.coffee</span></a><a href="../../src/components/WebService/Basecamp/ReadProjects.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ReadProjects.coffee</span></a><a href="../../src/components/WebService/Basecamp/ReadTaskLists.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ReadTaskLists.coffee</span></a><a href="../../src/components/WebService/Basecamp/ReadProjectHours.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ReadProjectHours.coffee</span></a><a href="../../src/components/WebService/Basecamp/ReadTasks.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ReadTasks.coffee</span></a><a href="../../src/components/WebService/Basecamp/ReadProject.coffee.html" class="source "><span class="base_path">src / components / WebService / Basecamp / </span><span class="file_name">ReadProject.coffee</span></a><a href="../../src/components/GetObjectKey.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">GetObjectKey.coffee</span></a><a href="../../src/components/RemoveGroups.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">RemoveGroups.coffee</span></a><a href="../../src/components/UniquePacket.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">UniquePacket.coffee</span></a><a href="../../src/components/CreateDate.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">CreateDate.coffee</span></a><a href="../../src/components/Split.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Split.coffee</span></a><a href="../../src/components/Kick.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Kick.coffee</span></a><a href="../../src/components/Output.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Output.coffee</span></a><a href="../../src/components/Callback.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Callback.coffee</span></a><a href="../../src/components/GroupByObjectKey.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">GroupByObjectKey.coffee</span></a><a href="../../src/components/RemoveProperty.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">RemoveProperty.coffee</span></a><a href="../../src/components/MapGroup.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">MapGroup.coffee</span></a><a href="../../src/components/WriteFileRaw.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">WriteFileRaw.coffee</span></a><a href="../../src/components/UniqueArray.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">UniqueArray.coffee</span></a><a href="../../src/components/FilterPropertyValue.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">FilterPropertyValue.coffee</span></a><a href="../../src/components/MapPropertyValue.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">MapPropertyValue.coffee</span></a><a href="../../src/components/SplitArray.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">SplitArray.coffee</span></a><a href="../../src/components/Stat.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Stat.coffee</span></a><a href="../../src/components/FilterProperty.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">FilterProperty.coffee</span></a><a href="../../src/components/FlattenObject.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">FlattenObject.coffee</span></a><a href="../../src/components/CreateObject.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">CreateObject.coffee</span></a><a href="../../src/components/SplitStr.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">SplitStr.coffee</span></a><a href="../../src/components/Base64Encode.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">Base64Encode.coffee</span></a><a href="../../src/components/ReadFile.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">ReadFile.coffee</span></a><a href="../../src/components/MapProperty.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">MapProperty.coffee</span></a><a href="../../src/components/PropertiesToObjects.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">PropertiesToObjects.coffee</span></a><a href="../../src/components/CollectGroups.coffee.html" class="source "><span class="base_path">src / components / </span><span class="file_name">CollectGroups.coffee</span></a></div></div></div><table cellpadding="0" cellspacing="0"><thead><tr><th class="docs"><h1>InternalSocket.coffee</h1><div class="filepath">src/lib/</div></th><th class="code"></th></tr></thead><tbody><tr id="section-1"><td class="docs"><div class="pilwrap"><a href="#section-1" class="pilcrow">&#182;</a></div><pre><code>NoFlo - Flow-Based Programming for Node.js
+(c) 2011 Henri Bergius, Nemein
+NoFlo may be freely distributed under the MIT license
+</code></pre>
+</td><td class="code"><div class="highlight"><pre><span class="nv">events = </span><span class="nx">require</span> <span class="s2">&quot;events&quot;</span></pre></div></td></tr><tr id="section-2"><td class="docs"><div class="pilwrap"><a href="#section-2" class="pilcrow">&#182;</a></div><h1>Internal Sockets</h1>
+
+<p>The default communications mechanism between NoFlo processes is
+an <em>internal socket</em>, which is responsible for accepting information
+packets sent from processes' outports, and emitting corresponding
+events so that the packets can be caught to the inport of the
+connected process.</p>
+</td><td class="code"><div class="highlight"><pre><span class="k">class</span> <span class="nx">InternalSocket</span> <span class="k">extends</span> <span class="nx">events</span><span class="p">.</span><span class="nx">EventEmitter</span>
+    <span class="nv">constructor: </span><span class="o">-&gt;</span>
+        <span class="vi">@connected = </span><span class="kc">false</span>
+        <span class="vi">@groups = </span><span class="p">[]</span></pre></div></td></tr><tr id="section-3"><td class="docs"><div class="pilwrap"><a href="#section-3" class="pilcrow">&#182;</a></div><h2>Socket connections</h2>
+
+<p>Sockets that are attached to the ports of processes may be
+either connected or disconnected. The semantical meaning of
+a connection is that the outport is in the process of sending
+data. Disconnecting means an end of transmission.</p>
+
+<p>This can be used for example to signal the beginning and end
+of information packets resulting from the reading of a single
+file or a database query.</p>
+
+<p>Example, disconnecting when a file has been completely read:</p>
+
+<pre><code>readBuffer: (fd, position, size, buffer) -&gt;
+  fs.read fd, buffer, 0, buffer.length, position, (err, bytes, buffer) =&gt;
+    # Send data. The first send will also connect if not
+    # already connected.
+    @outPorts.out.send buffer.slice 0, bytes
+    position += buffer.length
+
+    # Disconnect when the file has been completely read
+    return @outPorts.out.disconnect() if position &gt;= size
+
+    # Otherwise, call same method recursively
+    @readBuffer fd, position, size, buffer
+</code></pre>
+</td><td class="code"><div class="highlight"><pre>    <span class="nv">connect: </span><span class="o">-&gt;</span>
+        <span class="vi">@connected = </span><span class="kc">true</span>
+        <span class="nx">@emit</span> <span class="s1">&#39;connect&#39;</span><span class="p">,</span> <span class="err">@</span>
+
+    <span class="nv">disconnect: </span><span class="o">-&gt;</span>
+        <span class="vi">@connected = </span><span class="kc">false</span>
+        <span class="nx">@emit</span> <span class="s1">&#39;disconnect&#39;</span><span class="p">,</span> <span class="err">@</span>
+
+    <span class="nv">isConnected: </span><span class="o">-&gt;</span> <span class="nx">@connected</span></pre></div></td></tr><tr id="section-4"><td class="docs"><div class="pilwrap"><a href="#section-4" class="pilcrow">&#182;</a></div><h2>Sending information packets</h2>
+
+<p>The <em>send</em> method is used by a processe's outport to
+send information packets. The actual packet contents are
+not defined by NoFlo, and may be any valid JavaScript data
+structure.</p>
+
+<p>The packet contents however should be such that may be safely
+serialized or deserialized via JSON. This way the NoFlo networks
+can be constructed with more flexibility, as file buffers or
+message queues can be used as additional packet relay mechanisms.</p>
+</td><td class="code"><div class="highlight"><pre>    <span class="nv">send: </span><span class="nf">(data) -&gt;</span>
+        <span class="nx">@emit</span> <span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="nx">data</span></pre></div></td></tr><tr id="section-5"><td class="docs"><div class="pilwrap"><a href="#section-5" class="pilcrow">&#182;</a></div><h2>Information Packet grouping</h2>
+
+<p>Processes sending data to sockets may also group the packets
+when necessary. This allows transmitting tree structures as
+a stream of packets.</p>
+
+<p>For example, an object could be split into multiple packets
+where each property is identified by a separate grouping:</p>
+
+<pre><code># Group by object ID
+@outPorts.out.beginGroup object.id
+
+for property, value of object
+  @outPorts.out.beginGroup property
+  @outPorts.out.send value
+  @outPorts.out.endGroup()
+
+@outPorts.out.endGroup()
+</code></pre>
+
+<p>This would cause a tree structure to be sent to the receiving
+process as a stream of packets. So, an article object may be
+as packets like:</p>
+
+<ul>
+<li><code>/&lt;article id&gt;/title/Lorem ipsum</code></li>
+<li><code>/&lt;article id&gt;/author/Henri Bergius</code></li>
+</ul>
+
+<p>Components are free to ignore groupings, but are recommended
+to pass received groupings onward if the data structures remain
+intact through the component's processing.</p>
+</td><td class="code"><div class="highlight"><pre>    <span class="nv">beginGroup: </span><span class="nf">(group) -&gt;</span>
+        <span class="nx">@groups</span><span class="p">.</span><span class="nx">push</span> <span class="nx">group</span>
+        <span class="nx">@emit</span> <span class="s1">&#39;begingroup&#39;</span><span class="p">,</span> <span class="nx">group</span>
+
+    <span class="nv">endGroup: </span><span class="o">-&gt;</span>
+        <span class="nx">@emit</span> <span class="s1">&#39;endgroup&#39;</span><span class="p">,</span> <span class="nx">@groups</span><span class="p">.</span><span class="nx">pop</span><span class="p">()</span></pre></div></td></tr><tr id="section-6"><td class="docs"><div class="pilwrap"><a href="#section-6" class="pilcrow">&#182;</a></div><h2>Socket identifiers</h2>
+
+<p>Socket identifiers are mainly used for debugging purposes.
+Typical identifiers look like <em>ReadFile:OUT -> Display:IN</em>,
+but for sockets sending initial information packets to
+components may also loom like <em>DATA -> ReadFile:SOURCE</em>.</p>
+</td><td class="code"><div class="highlight"><pre>    <span class="nv">getId: </span><span class="o">-&gt;</span>
+        <span class="k">return</span> <span class="s2">&quot;#{@from.process.id}:#{@from.port} -&gt; ANON&quot;</span> <span class="k">if</span> <span class="nx">@from</span> <span class="o">and</span> <span class="o">not</span> <span class="nx">@to</span>
+        <span class="k">return</span> <span class="s2">&quot;DATA -&gt; #{@to.process.id}:#{@to.port}&quot;</span> <span class="nx">unless</span> <span class="nx">@from</span>
+        <span class="s2">&quot;#{@from.process.id}:#{@from.port} -&gt; #{@to.process.id}:#{@to.port}&quot;</span>
+
+<span class="nv">exports.InternalSocket = </span><span class="nx">InternalSocket</span>
+
+<span class="nv">exports.createSocket = </span><span class="o">-&gt;</span> <span class="k">new</span> <span class="nx">InternalSocket</span>
+
+</pre></div></td></tr></tbody></table><div id="generated">generated Tue Apr 03 2012 15:29:45 GMT+0200 (CEST)  </div><div id="projectname"><a href="../../index.html">NoFlo</a></div></div></body></html>

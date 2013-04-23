@@ -1,7 +1,6 @@
 .node_shell
 node_modules
 /components/
-/browser/
 bin/*.js
 /lib/
 spec/*.js

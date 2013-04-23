@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>NoFlo drag-and-drop demo</title>
+    <script src="../browser/noflo.js"></script>
+    <style>
+      .area {
+        width: 600px;
+        height: 400px;
+        background-color: #eeeeee;
+        border: 2px #c0c0c0 solid;
+      }
+      .area img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+      }
+      textarea {
+        width: 600px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="area">
+      <img src="http://bergie.iki.fi/style/img/mdpi/bergie.jpg">
+    </div>
+    <textarea id="graph">
+    </textarea>
+    <script>
+      var noflo = require('noflo');
+      var graph = new noflo.Graph('Movable image');
+      graph.baseDir = '/noflo/';
+      graph.addNode('Image', 'GetElement');
+      graph.addNode('SendElement', 'Split');
+      graph.addNode('Display', 'Output');
+      graph.addNode('Touch', 'ListenTouch');
+      graph.addNode('DragX', 'Gate');
+      graph.addNode('DragY', 'Gate');
+      graph.addNode('Move', 'MoveElement');
+      graph.addInitial('.area img', 'Image', 'selector');
+      graph.addEdge('Image', 'element', 'SendElement', 'in');
+      graph.addEdge('SendElement', 'out', 'Display', 'in');
+      graph.addEdge('SendElement', 'out', 'Touch', 'element');
+      graph.addEdge('SendElement', 'out', 'Move', 'element');
+
+      // left-right axis
+      graph.addEdge('Touch', 'start', 'DragX', 'open');
+      graph.addEdge('Touch', 'moveX', 'DragX', 'in');
+      graph.addEdge('Touch', 'end', 'DragX', 'close');
+      graph.addEdge('DragX', 'out', 'Move', 'x');
+
+      // up-down axis
+      graph.addEdge('Touch', 'start', 'DragY', 'open');
+      graph.addEdge('Touch', 'moveY', 'DragY', 'in');
+      graph.addEdge('Touch', 'end', 'DragY', 'close');
+      graph.addEdge('DragY', 'out', 'Move', 'y');
+      var g = document.getElementById('graph');
+      g.value = JSON.stringify(graph.toJSON(), null, 2);
+
+      noflo.createNetwork(graph, function (network) {
+        console.log("Network created");
+      });
+    </script>
+  </body>
+</html>

@@ -1501,6 +1501,7 @@ exports.register = function (loader) {
   loader.registerComponent('', 'GetElement', '/noflo/components/GetElement.js');
   loader.registerComponent('', 'MoveElement', '/noflo/components/MoveElement.js');
   loader.registerComponent('', 'ListenTouch', '/noflo/components/ListenTouch.js');
+  loader.registerComponent('', 'Spring', '/noflo/components/Spring.js');
   loader.registerComponent('', 'Kick', '/noflo/components/Kick.js');
   loader.registerComponent('', 'Gate', '/noflo/components/Gate.js');
   loader.registerComponent('', 'Output', '/noflo/components/Output.js');
@@ -3339,7 +3340,6 @@ require.register("noflo/components/MoveElement.js", function(exports, require, m
     }
 
     MoveElement.prototype.setPosition = function(attr, value) {
-      console.log(attr, value, this.element.style);
       this.element.style.position = 'absolute';
       return this.element.style[attr] = value;
     };
@@ -3384,8 +3384,8 @@ require.register("noflo/components/ListenTouch.js", function(exports, require, m
       };
       this.outPorts = {
         start: new noflo.ArrayPort('object'),
-        moveX: new noflo.Port('number'),
-        moveY: new noflo.Port('number'),
+        moveX: new noflo.ArrayPort('number'),
+        moveY: new noflo.ArrayPort('number'),
         end: new noflo.ArrayPort('object')
       };
       this.inPorts.element.on('data', function(element) {
@@ -3478,6 +3478,89 @@ require.register("noflo/components/ListenTouch.js", function(exports, require, m
 
   exports.getComponent = function() {
     return new ListenTouch;
+  };
+
+}).call(this);
+
+});
+require.register("noflo/components/Spring.js", function(exports, require, module){
+(function() {
+  var Spring, noflo, requestAnimFrame,
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  if (typeof process === 'object' && process.title === 'node') {
+    noflo = require("../../lib/NoFlo");
+    requestAnimFrame = process.nextTick;
+  } else {
+    noflo = require('/noflo');
+    requestAnimFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || function(callback) {
+      return setTimeout(callback, 1);
+    };
+  }
+
+  Spring = (function(_super) {
+    __extends(Spring, _super);
+
+    Spring.prototype.description = 'Animates a directional spring';
+
+    function Spring() {
+      this.step = __bind(this.step, this);
+      var _this = this;
+
+      this.massPosition = 0;
+      this.anchorPosition = 0;
+      this.stiffness = 120;
+      this.mass = 10;
+      this.friction = 3;
+      this.speed = 0;
+      this.inPorts = {
+        anchor: new noflo.Port('number'),
+        "in": new noflo.Port('number')
+      };
+      this.outPorts = {
+        out: new noflo.Port('number')
+      };
+      this.inPorts.anchor.on('data', function(anchorPosition) {
+        _this.anchorPosition = anchorPosition;
+      });
+      this.inPorts["in"].on('data', function(massPosition) {
+        _this.massPosition = massPosition;
+        return _this.step();
+      });
+    }
+
+    Spring.prototype.step = function() {
+      var acceleration, dampingForce, distance, previousPosition, springForce, totalForce;
+
+      distance = this.massPosition - this.anchorPosition;
+      dampingForce = -this.friction * this.speed;
+      springForce = -this.stiffness * distance;
+      totalForce = springForce + dampingForce;
+      acceleration = totalForce / this.mass;
+      this.speed += acceleration;
+      previousPosition = this.massPosition;
+      this.massPosition += this.speed / 100;
+      if (Math.round(this.massPosition) !== Math.round(previousPosition)) {
+        this.outPorts.out.send(Math.round(this.massPosition));
+      }
+      if (Math.round(this.massPosition) === this.anchorPosition && Math.abs(this.speed) < 0.2) {
+        return this.outPorts.out.disconnect();
+      } else {
+        if (this.massPosition === 0) {
+          return;
+        }
+        return requestAnimFrame(this.step);
+      }
+    };
+
+    return Spring;
+
+  })(noflo.Component);
+
+  exports.getComponent = function() {
+    return new Spring;
   };
 
 }).call(this);

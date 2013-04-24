@@ -32,33 +32,73 @@
       var noflo = require('noflo');
       var graph = new noflo.Graph('Movable image');
       graph.baseDir = '/noflo/';
+
+      // The image element, selected from DOM with CSS selector
       graph.addNode('Image', 'GetElement');
+      graph.addInitial('.area img', 'Image', 'selector');
       graph.addNode('SendElement', 'Split');
-      graph.addNode('Display', 'Output');
+
+      // Initial positioning for the image
+      graph.addNode('AnchorX', 'Split');
+      graph.addInitial(250, 'AnchorX', 'in');
+      graph.addNode('AnchorY', 'Split');
+      graph.addInitial(150, 'AnchorY', 'in');
+
       graph.addNode('Touch', 'ListenTouch');
       graph.addNode('DragX', 'Gate');
       graph.addNode('DragY', 'Gate');
+      graph.addNode('NewX', 'Kick');
+      graph.addNode('SpringX', 'Spring');
+      graph.addNode('NewY', 'Kick');
+      graph.addNode('SpringY', 'Spring');
+      graph.addNode('PosX', 'Merge');
+      graph.addNode('PosY', 'Merge');
       graph.addNode('Move', 'MoveElement');
-      graph.addInitial('.area img', 'Image', 'selector');
+
+      // Pass the image element to nodes that need it
       graph.addEdge('Image', 'element', 'SendElement', 'in');
-      graph.addEdge('SendElement', 'out', 'Display', 'in');
       graph.addEdge('SendElement', 'out', 'Touch', 'element');
       graph.addEdge('SendElement', 'out', 'Move', 'element');
 
-      // left-right axis
+      // initial left-right positioning
+      graph.addEdge('AnchorX', 'out', 'PosX', 'in');
+      graph.addEdge('PosX', 'out', 'Move', 'x');
+
+      // initial up-down positioning
+      graph.addEdge('AnchorY', 'out', 'PosY', 'in');
+      graph.addEdge('PosY', 'out', 'Move', 'y');
+
+      // left-right axis dragging
       graph.addEdge('Touch', 'start', 'DragX', 'open');
       graph.addEdge('Touch', 'moveX', 'DragX', 'in');
       graph.addEdge('Touch', 'end', 'DragX', 'close');
-      graph.addEdge('DragX', 'out', 'Move', 'x');
+      graph.addEdge('DragX', 'out', 'PosX', 'in');
 
-      // up-down axis
+      // left-right axis return when touch ends
+      graph.addEdge('AnchorX', 'out', 'SpringX', 'anchor');
+      graph.addEdge('Touch', 'moveX', 'NewX', 'data');
+      graph.addEdge('Touch', 'end', 'NewX', 'in');
+      graph.addEdge('NewX', 'out', 'SpringX', 'in');
+      graph.addEdge('SpringX', 'out', 'PosX', 'in');
+
+      // up-down axis dragging
       graph.addEdge('Touch', 'start', 'DragY', 'open');
       graph.addEdge('Touch', 'moveY', 'DragY', 'in');
       graph.addEdge('Touch', 'end', 'DragY', 'close');
-      graph.addEdge('DragY', 'out', 'Move', 'y');
+      graph.addEdge('DragY', 'out', 'PosY', 'in');
+
+      // up-down axis return when touch ends
+      graph.addEdge('AnchorY', 'out', 'SpringY', 'anchor');
+      graph.addEdge('Touch', 'moveY', 'NewY', 'data');
+      graph.addEdge('Touch', 'end', 'NewY', 'in');
+      graph.addEdge('NewY', 'out', 'SpringY', 'in');
+      graph.addEdge('SpringY', 'out', 'PosY', 'in');
+
+      // write graph JSON to textarea
       var g = document.getElementById('graph');
       g.value = JSON.stringify(graph.toJSON(), null, 2);
 
+      // run the graph
       noflo.createNetwork(graph, function (network) {
         console.log("Network created");
       });

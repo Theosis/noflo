@@ -1490,24 +1490,6 @@ require.register("component-underscore/index.js", function(exports, require, mod
 }).call(this);
 
 });
-require.register("noflo/components.js", function(exports, require, module){
-// Manual registration of components to make available for the ComponentLoader
-//
-// This is an interim solution until https://github.com/component/builder.js/pull/62#issuecomment-16296342 is implemented
-exports.register = function (loader) {
-  loader.registerComponent('', 'Split', '/noflo/components/Split.js');
-  loader.registerComponent('', 'Merge', '/noflo/components/Merge.js');
-  loader.registerComponent('', 'Callback', '/noflo/components/Callback.js');
-  loader.registerComponent('', 'GetElement', '/noflo/components/GetElement.js');
-  loader.registerComponent('', 'MoveElement', '/noflo/components/MoveElement.js');
-  loader.registerComponent('', 'ListenTouch', '/noflo/components/ListenTouch.js');
-  loader.registerComponent('', 'Spring', '/noflo/components/Spring.js');
-  loader.registerComponent('', 'Kick', '/noflo/components/Kick.js');
-  loader.registerComponent('', 'Gate', '/noflo/components/Gate.js');
-  loader.registerComponent('', 'Output', '/noflo/components/Output.js');
-};
-
-});
 require.register("noflo/lib/Graph.js", function(exports, require, module){
 (function() {
   var EventEmitter, Graph, fbp, fs,
@@ -2578,18 +2560,49 @@ require.register("noflo/lib/ComponentLoader.js", function(exports, require, modu
       if (!name) {
         return '';
       }
+      if (name === 'noflo') {
+        return '';
+      }
       return name.replace('noflo-', '');
     };
 
-    ComponentLoader.prototype.listComponents = function(callback) {
-      var registration;
+    ComponentLoader.prototype.getModuleComponents = function(moduleName) {
+      var cPath, definition, dependency, e, name, prefix, _ref, _results;
 
+      if (this.checked.indexOf(moduleName) !== -1) {
+        return;
+      }
+      this.checked.push(moduleName);
+      try {
+        definition = require("/" + moduleName + "/component.json");
+      } catch (_error) {
+        e = _error;
+        return;
+      }
+      for (dependency in definition.dependencies) {
+        this.getModuleComponents(dependency);
+      }
+      if (!definition.noflo) {
+        return;
+      }
+      prefix = this.getModulePrefix(definition.name);
+      if (definition.noflo.components) {
+        _ref = definition.noflo.components;
+        _results = [];
+        for (name in _ref) {
+          cPath = _ref[name];
+          _results.push(this.registerComponent(prefix, name, "/" + definition.name + "/" + cPath));
+        }
+        return _results;
+      }
+    };
+
+    ComponentLoader.prototype.listComponents = function(callback) {
       if (this.components !== null) {
         return callback(this.components);
       }
       this.components = {};
-      registration = require("" + this.baseDir + "components.js");
-      registration.register(this);
+      this.getModuleComponents(this.baseDir);
       return callback(this.components);
     };
 
@@ -3483,6 +3496,143 @@ require.register("noflo/components/ListenTouch.js", function(exports, require, m
 }).call(this);
 
 });
+require.register("noflo/components/ListenDrag.js", function(exports, require, module){
+(function() {
+  var ListenDrag, noflo,
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  if (typeof process === 'object' && process.title === 'node') {
+    noflo = require("../../lib/NoFlo");
+  } else {
+    noflo = require('/noflo');
+  }
+
+  ListenDrag = (function(_super) {
+    __extends(ListenDrag, _super);
+
+    ListenDrag.prototype.description = 'Listen to drag events on a DOM element';
+
+    function ListenDrag() {
+      this.dragend = __bind(this.dragend, this);
+      this.dragmove = __bind(this.dragmove, this);
+      this.dragstart = __bind(this.dragstart, this);
+      var _this = this;
+
+      this.inPorts = {
+        element: new noflo.Port('object')
+      };
+      this.outPorts = {
+        start: new noflo.ArrayPort('object'),
+        moveX: new noflo.ArrayPort('number'),
+        moveY: new noflo.ArrayPort('number'),
+        end: new noflo.ArrayPort('object')
+      };
+      this.inPorts.element.on('data', function(element) {
+        return _this.subscribe(element);
+      });
+    }
+
+    ListenDrag.prototype.subscribe = function(element) {
+      element.addEventListener('dragstart', this.dragstart, false);
+      element.addEventListener('drag', this.dragmove, false);
+      return element.addEventListener('dragend', this.dragend, false);
+    };
+
+    ListenDrag.prototype.dragstart = function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.outPorts.start.send(event);
+      return this.outPorts.start.disconnect();
+    };
+
+    ListenDrag.prototype.dragmove = function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.outPorts.moveX.send(event.clientX);
+      return this.outPorts.moveY.send(event.clientY);
+    };
+
+    ListenDrag.prototype.dragend = function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (this.outPorts.moveX.isConnected()) {
+        this.outPorts.moveX.disconnect();
+      }
+      if (this.outPorts.moveY.isConnected()) {
+        this.outPorts.moveY.disconnect();
+      }
+      this.outPorts.end.send(event);
+      return this.outPorts.end.disconnect();
+    };
+
+    return ListenDrag;
+
+  })(noflo.Component);
+
+  exports.getComponent = function() {
+    return new ListenDrag;
+  };
+
+}).call(this);
+
+});
+require.register("noflo/components/ListenMouse.js", function(exports, require, module){
+(function() {
+  var ListenMouse, noflo,
+    __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+
+  if (typeof process === 'object' && process.title === 'node') {
+    noflo = require("../../lib/NoFlo");
+  } else {
+    noflo = require('/noflo');
+  }
+
+  ListenMouse = (function(_super) {
+    __extends(ListenMouse, _super);
+
+    ListenMouse.prototype.description = 'Listen to mouse events on a DOM element';
+
+    function ListenMouse() {
+      this.click = __bind(this.click, this);
+      var _this = this;
+
+      this.inPorts = {
+        element: new noflo.Port('object')
+      };
+      this.outPorts = {
+        click: new noflo.ArrayPort('object')
+      };
+      this.inPorts.element.on('data', function(element) {
+        return _this.subscribe(element);
+      });
+    }
+
+    ListenMouse.prototype.subscribe = function(element) {
+      return element.addEventListener('click', this.click, false);
+    };
+
+    ListenMouse.prototype.click = function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      this.outPorts.click.send(event);
+      return this.outPorts.click.disconnect();
+    };
+
+    return ListenMouse;
+
+  })(noflo.Component);
+
+  exports.getComponent = function() {
+    return new ListenMouse;
+  };
+
+}).call(this);
+
+});
 require.register("noflo/components/Spring.js", function(exports, require, module){
 (function() {
   var Spring, noflo, requestAnimFrame,
@@ -3983,6 +4133,9 @@ require.register("noflo/components/Output.js", function(exports, require, module
 
 }).call(this);
 
+});
+require.register("noflo/component.json", function(exports, require, module){
+module.exports = JSON.parse('{"name":"noflo","description":"Flow-Based Programming environment for JavaScript","keywords":["fbp","workflow","flow"],"repo":"bergie/noflo","version":"0.3.3","dependencies":{"component/emitter":"*","component/underscore":"*"},"development":{},"license":"MIT","main":"lib/NoFlo.js","scripts":["lib/Graph.js","lib/InternalSocket.js","lib/Port.js","lib/ArrayPort.js","lib/Component.js","lib/AsyncComponent.js","lib/ComponentLoader.js","lib/NoFlo.js","lib/Network.js","components/GetElement.js","components/MoveElement.js","components/ListenTouch.js","components/ListenDrag.js","components/ListenMouse.js","components/Spring.js","components/Callback.js","components/Kick.js","components/Gate.js","components/Split.js","components/Merge.js","components/Output.js"],"json":["component.json"],"noflo":{"components":{"GetElement":"components/GetElement.js","MoveElement":"components/MoveElement.js","ListenTouch":"components/ListenTouch.js","ListenDrag":"components/ListenDrag.js","ListenMouse":"components/ListenMouse.js","Spring":"components/Spring.js","Callback":"components/Callback.js","Kick":"components/Kick.js","Gate":"components/Gate.js","Split":"components/Split.js","Merge":"components/Merge.js","Output":"components/Output.js"}}}');
 });
 require.alias("component-emitter/index.js", "noflo/deps/emitter/index.js");
 require.alias("component-indexof/index.js", "component-emitter/deps/indexof/index.js");

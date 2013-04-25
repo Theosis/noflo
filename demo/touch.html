@@ -31,7 +31,9 @@
     <script>
       var noflo = require('noflo');
       var graph = new noflo.Graph('Movable image');
-      graph.baseDir = '/noflo/';
+
+      // Which component to start with when loading components
+      graph.baseDir = 'noflo';
 
       // The image element, selected from DOM with CSS selector
       graph.addNode('Image', 'GetElement');
